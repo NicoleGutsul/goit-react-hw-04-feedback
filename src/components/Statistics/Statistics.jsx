@@ -1,6 +1,8 @@
 const Statistics = ({
     title,
-    state: { good, bad, neutral },
+    good, 
+    bad, 
+    neutral,
     countTotalFeedback,
     countPositiveFeedbackPercentage,
 }) => {
@@ -16,20 +18,13 @@ const Statistics = ({
            <p>
                Bad: <span>{bad}</span>
            </p>
-           {countTotalFeedback > 0 ? (
-              <p>
-                Total: <span>{countTotalFeedback}</span>
-              </p>
-           ) : (
-            ''
-           )}
-           {countTotalFeedback > 0 ? (
-              <p>
-                Positive Feedback: <span>{countPositiveFeedbackPercentage} %</span>
-              </p>
-           ) : (
-            ''
-           )}
+           <p>
+               Total: {countTotalFeedback}
+           </p>
+           <p>
+               Positive Feadback: {countPositiveFeedbackPercentage ? countPositiveFeedbackPercentage + '%' : 0} 
+           </p>
+           
         </>
     );
 };
